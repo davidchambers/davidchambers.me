@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background: #222;
+}
+
+#wrapper {
+  margin: 48px 0 0 160px;
+  width: 704px;
+  border-left: 4px solid #c30;
+  background: #ffe;
+  padding: 48px 48px 56px 44px;
+  font: 400 48px/1 adelle, serif;
+  color: #333;
+}
+
+#wrapper h1 {
+  display: inline;
+  font: inherit;
+}
+#wrapper h1:after {
+  content: ",";
+}
+
+#wrapper h1 + p {
+  display: inline;
+}
+
+#wrapper p + p {
+  margin: 32px 0 0;
+}
+
+#wrapper a {
+  text-decoration: none;
+  color: #c30;
+}
+
+#wrapper b {
+  font-weight: 700;
+}
