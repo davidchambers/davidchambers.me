@@ -9,7 +9,7 @@ body {
   border-left: 4px solid #c30;
   background: #ffe;
   padding: 48px 48px 56px 44px;
-  font: 400 48px/1 Georgia, serif;
+  font: 32px/1.25 "Courier", monospace;
   color: #333;
 }
 
@@ -25,8 +25,12 @@ body {
   display: inline;
 }
 
+#wrapper p {
+  margin: 1.25em 0;
+}
+
 #wrapper p + p {
-  margin: 32px 0 0;
+  margin-bottom: 0;
 }
 
 #wrapper a {
