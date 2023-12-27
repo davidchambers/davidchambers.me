@@ -3,44 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>David Chambers | Curriculum Vitae</title>
-  <!--[if IE]>
-    <script>document.createElement('time')</script>
-  <![endif]-->
   <style>
     body {
       margin: 0;
-      width: 44em;
+      width: 45em;
       padding: 3em;
-      font: 16px/1.25 "Courier", monospace;
+      font: 16px/1.5 ui-monospace, monospace;
     }
     h1 {
-      margin: 1px 0 35px;
+      margin-block: 0 36px;
       font-size: 2em;
     }
     h1 small {
       font-size: 0.5em;
     }
     h2 {
-      margin: 2.5em 0 0;
+      --border-width: 2px;
+      margin-block: 1.5em calc(0.75em - var(--border-width) / 2);
+      border-bottom: var(--border-width) solid #000;
+      padding-block: 1.5em calc(0.75em - var(--border-width) / 2);
       font-size: 1em;
-    }
-    h2:after {
-      display: block;
-      content: "------------------------------------------------------------------------";
-      overflow: hidden;
     }
     h3 {
-      margin: 1.25em 0 0;
+      margin: 1.5em 0 0;
       font-size: 1em;
     }
-    h3:after {
+    h3::after {
       content: ":\00A0";
     }
     p {
-      margin: 1.25em 0 0;
+      margin: 1.5em 0 0;
     }
     dl {
-      margin: 1.25em 0 0;
+      margin: 1.5em 0 0;
     }
     dt {
       white-space: pre;
@@ -50,45 +45,45 @@
       margin: 0;
     }
     ul {
-      margin: 1.25em 0 0;
+      margin: 1.5em 0 0;
       padding: 0;
       list-style: none;
     }
     ul li {
       position: relative;
-      max-width: 32em;
       padding-left: 1.2em;
     }
-    ul li:before {
+    ul li::before {
       position: absolute;
       left: 0;
       content: "- ";
     }
     a {
-      text-decoration: none;
+      text-underline-offset: 2px;
       color: #c30;
     }
-    .floated:after {
+    dl::after {
       display: block;
       clear: left;
       content: "";
     }
-    .floated h3,
-    .floated dt {
+    dt {
       clear: left;
       float: left;
     }
-    .floated h3 + *,
-    .floated dd {
+    dd {
       float: left;
+    }
+    .flex {
+      display: flex;
     }
     @media print {
       body {
         width: auto;
-        padding: 0;
+        padding: 1.5rem;
+        font-size: 12px;
       }
       a {
-        font-weight: bold;
         color: inherit;
       }
     }
@@ -96,52 +91,79 @@
 </head>
 <body>
   <h1>David Chambers<br><small>Curriculum Vitae</small></h1>
-  <div class="floated">
-    <dl>
-      <dt>birthdate: </dt><dd><time datetime="1984-04-26">1984-04-26</time></dd>
-      <dt>location:  </dt><dd>Berlin, Germany</dd>
-      <dt>phone:     </dt><dd><a href="tel:+491771964820">+49 177 1964820</a></dd>
-      <dt>email:     </dt><dd><a href="mailto:dc@davidchambers.me">dc@davidchambers.me</a></dd>
-    </dl>
-  </div>
+  <dl>
+    <dt>birthdate: </dt><dd><time datetime="1984-04-26">1984-04-26</time></dd>
+    <dt>location:  </dt><dd>Berlin, Germany</dd>
+    <dt>phone:     </dt><dd><a href="tel:+491771964820">+49 177 1964820</a></dd>
+    <dt>email:     </dt><dd><a href="mailto:dc@davidchambers.me">dc@davidchambers.me</a></dd>
+  </dl>
   <div>
     <h2>Work experience</h2>
-    <h3>2019..2020: Developer, Nash, remote</h3>
+    <h3><time datetime="2020">2020</time>..<time datetime="2023">2023</time>: Developer, Portchain, remote</h3>
+    <p>Developed a web application for planners at various container terminals around the world. Both the front end and the back end were written in TypeScript and made heavy use of <a href="https://gcanti.github.io/fp-ts/">fp-ts</a>. The application was backed by a PostgreSQL database; queries were in raw SQL. The front end used <a href="https://reactjs.org/">React</a>.</p>
+    <h3><time datetime="2019">2019</time>..<time datetime="2020">2020</time>: Developer, Nash, remote</h3>
     <p>Wrote client-side software in TypeScript (with <a href="https://reactjs.org/">React</a>). Integrated with a third party to let Nash users buy coins of various cryptocurrencies.</p>
-    <h3>2017..2018: Developer, Formation (née Takt), remote</h3>
+    <h3><time datetime="2017">2017</time>..<time datetime="2018">2018</time>: Developer, Formation (née Takt), remote</h3>
     <p>Wrote client-side software in Haskell (with <a href="https://reflex-frp.org/">Reflex</a>) and JavaScript (with <a href="https://reactjs.org/">React</a>). Mentored colleagues on algebraic data types and other functional programming concepts. Discovered the benefits and challenges of working remotely (in a different time zone).</p>
-    <h3>2013..2016: Developer, Plaid, San Francisco, CA, USA</h3>
+    <h3><time datetime="2013">2013</time>..<time datetime="2016">2016</time>: Developer, Plaid, San Francisco, CA, USA</h3>
     <p>Created software for normalizing and contextualizing transaction data from various sources. Established good coding, testing, and reviewing practices within the team. Solved complex problems by composing small, pure functions. Developed libraries to encourage functional programming in JavaScript.</p>
-    <h3>2012..2013: Member of Technical Staff, Upthere, Palo Alto, CA, USA</h3>
+    <h3><time datetime="2012">2012</time>..<time datetime="2013">2013</time>: Member of Technical Staff, Upthere, Palo Alto, CA, USA</h3>
     <p>Developed components of a rich, web-based file browser using HTML, Sass, and CoffeeScript. Created <a href="https://github.com/davidchambers/airwaves">Airwaves</a>, a lightweight pub/sub library. Learnt to use Make to define build pipelines.</p>
-    <h3>2010..2012: Developer, Atlassian, San Francisco, CA, USA</h3>
+    <h3><time datetime="2010">2010</time>..<time datetime="2012">2012</time>: Developer, Atlassian, San Francisco, CA, USA</h3>
     <p>Designed and implemented features of the <a href="https://bitbucket.org/">Bitbucket</a> code hosting website. Defined REST API endpoints, wrote Django views, and used HTML, CSS, and JavaScript to implement UI components.</p>
     <p>References available upon request.</p>
   </div>
-  <div class="floated">
-    <h2>Higher education</h2>
-    <h3>2008..2009</h3>
+  <h2>Higher education</h2>
+  <div class="flex">
+    <h3><time datetime="2008">2008</time>..<time datetime="2009">2009</time></h3>
     <p>Graduate Diploma in Computer and Information Sciences,<br>Auckland University of Technology, New Zealand</p>
-    <h3>2002..2005</h3>
+  </div>
+  <div class="flex">
+    <h3><time datetime="2002">2002</time>..<time datetime="2005">2005</time></h3>
     <p>Bachelor of Fine Arts (graphic design),<br>University of Auckland, New Zealand</p>
   </div>
-  <div class="floated">
-    <h2>Community involvement</h2>
+  <h2>Community involvement</h2>
+  <div class="flex">
+    <h3>2024</h3>
+    <ul>
+      <li>Preparing major releases of all Sanctuary packages</li>
+    </ul>
+  </div>
+  <div class="flex">
+    <h3>2023</h3>
+    <ul>
+      <li>Worked towards modernizing the Sanctuary ecosystem</li>
+      <li>Worked full-time developing a programming language</li>
+    </ul>
+  </div>
+  <div class="flex">
+    <h3>2020</h3>
+    <ul>
+      <li>Created a Lisp and used it to build a static site generator</li>
+    </ul>
+  </div>
+  <div class="flex">
     <h3>2018</h3>
     <ul>
       <li>Presented <a href="https://www.youtube.com/watch?v=a2astdDbOjk">Programming Safely in an Uncertain World</a> at ReactiveConf in Prague</li>
       <li>Presented a workshop at LambdaConf in Boulder, <abbr title="Colorado">CO</abbr></li>
     </ul>
+  </div>
+  <div class="flex">
     <h3>2016</h3>
     <ul>
       <li>Joined <a href="https://github.com/fantasyland">Fantasy Land</a> core team and became responsible for releases</li>
       <li>Published <a href="http://sanctuary.js.org/">sanctuary.js.org</a></li>
     </ul>
+  </div>
+  <div class="flex">
     <h3>2015</h3>
     <ul>
       <li>Released <a href="https://github.com/plaid/transcribe">Transcribe</a></li>
       <li>Released <a href="https://github.com/sanctuary-js/sanctuary">Sanctuary</a></li>
     </ul>
+  </div>
+  <div class="flex">
     <h3>2014</h3>
     <ul>
       <li>Organized <a href="http://www.clojurebridge.org/">ClojureBridge</a> workshop in San Francisco, <abbr title="California">CA</abbr></li>
@@ -149,11 +171,15 @@
       <li>Released <a href="https://github.com/davidchambers/xyz">xyz</a></li>
       <li>Contributed to <a href="https://github.com/jashkenas/underscore/pulls?q=is%3Apr+is%3Amerged+author%3Adavidchambers">Underscore</a></li>
     </ul>
+  </div>
+  <div class="flex">
     <h3>2012</h3>
     <ul>
       <li>Released <a href="https://github.com/davidchambers/CANON">CANON</a></li>
       <li>Released <a href="https://github.com/davidchambers/doctest">doctest</a></li>
     </ul>
+  </div>
+  <div class="flex">
     <h3>2011</h3>
     <ul>
       <li>Released <a href="https://github.com/davidchambers/tutor">Tutor</a></li>
