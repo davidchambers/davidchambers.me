@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  background: #222;
+}
+
+#wrapper {
+  margin: 48px 0 0 160px;
+  width: 704px;
+  border-left: 4px solid #c30;
+  background: #ffe;
+  padding: 48px 48px 56px 44px;
+  font: 32px/1.25 "Courier", monospace;
+  color: #333;
+}
+
+#wrapper h1 {
+  display: inline;
+  font: inherit;
+}
+#wrapper h1:after {
+  content: ",";
+}
+
+#wrapper h1 + p {
+  display: inline;
+}
+
+#wrapper p {
+  margin: 1.25em 0;
+}
+
+#wrapper p + p {
+  margin-bottom: 0;
+}
+
+#wrapper a {
+  text-decoration: none;
+  color: #c30;
+}
+
+#wrapper b {
+  font-weight: 700;
+}
